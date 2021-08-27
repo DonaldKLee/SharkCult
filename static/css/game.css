@@ -17,12 +17,14 @@
     position: relative;
 
 
-    animation: henry 2s linear infinite;
+    animation: henry 2s linear infinite; /* Temporarily stopped it so I can test out the scores - Donald */
 
     top: 500px;
 
     /*Transform scale*/
-     transform: scale(0.5)
+     transform: scale(0.5);
+
+    background: red; /*To see how big the shark is - Donald*/
 }
 
 
@@ -33,22 +35,22 @@
     }
 
     10% {
-        top:  450px;
+        top:  420px;
         left: 100px;
     }
 
     20% {
-        top: 400px;
+        top: 340px;
         left: 200px;
     }
 
     30% {
-        top: 350px;
+        top: 300px;
         left: 300px;
     }
 
     40% {
-        top: 300px;
+        top: 275px;
         left: 400px;
     }
 
@@ -58,24 +60,24 @@
     }
     
     60% {
-        top: 300px;
+        top: 275px;
         left: 600px;
     }
 
     70% {
-        top: 350px;
+        top: 300px;
         left: 700px;
     }
 
 
     80% {
-        top: 400px;
+        top: 340px;
         left: 800px;
     }
 
 
     90% {
-        top: 450px;
+        top: 420px;
         left: 900px;
     }
 
@@ -83,19 +85,7 @@
         top: 500px;
         left: 1000px;
     }
-
-
 }
-
-
-
-  
-
-
-
-
-
-
 
 
 

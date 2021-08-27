@@ -23,10 +23,19 @@ function hearts_used() {
 }
 
 function spawn_shark() {
-    var sharks_list = ["big", "medium", "small"]
-    shark_type = sharks_list[Math.floor(Math.random() * sharks_list.length)];
+    //var sharks_list = ["baskingshark", "blueshark", "hammerhead1", "hammerhead2", "morningshark", "whaleshark"]
 
-    alert(shark_type);
+    var sharks_list = [
+        ["baskingshark", 1],
+        ["blueshark", 1],
+        ["hammerhead1", 1],
+        ["hammerhead2", 2],
+        ["morningshark", 3],
+        ["whaleshark", 2],
+    ]
+
+
+    shark_type = sharks_list[Math.floor(Math.random() * sharks_list.length)];
 
     // make this 
     // <img src="static/images/morningshark.png" class="shark" onclick="shark_clicked()" draggable="false" unselectable="on"/>
@@ -34,9 +43,12 @@ function spawn_shark() {
     var game_container = document.getElementById("game_container")
 
     var shark = document.createElement("img");
-    shark.src = "static/images/morningshark.png";  
+    shark.src = "static/images/" + shark_type[0] + ".png";  
 
     shark.classList.add("shark");
+
+    shark_name = shark_type[0]
+    shark_rarity = shark_type[1]
 
     //shark.setAttribute("onclick","shark_clicked()");
 
@@ -46,7 +58,10 @@ function spawn_shark() {
         // If user's hearts are not below or equal to 0
         if (!(hearts.innerHTML <= 0)) {
             var score = document.getElementById("score");
-            score.innerHTML = ++score.innerHTML;
+            new_score = parseInt(score.innerHTML) + parseInt(shark_rarity);
+            console.log(shark_type)
+
+            score.innerHTML = new_score;
         }
     };
 
@@ -57,4 +72,4 @@ function spawn_shark() {
 
 }
 
-setInterval(spawn_shark, 3000)
+setInterval(spawn_shark, 1000)
