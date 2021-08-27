@@ -23,6 +23,9 @@ function hearts_used() {
 }
 
 function spawn_shark() {
+    var sharks_list = ["big", "medium", "small"]
+    sharks_list[Math.floor(Math.random() * arr.length)];
+
     // make this 
     // <img src="static/images/morningshark.png" class="shark" onclick="shark_clicked()" draggable="false" unselectable="on"/>
 
@@ -36,7 +39,13 @@ function spawn_shark() {
     //shark.setAttribute("onclick","shark_clicked()");
 
     shark.onclick = function() {
-        
+        var hearts = document.getElementById("hearts");
+
+        // If user's hearts are not below or equal to 0
+        if (!(hearts.innerHTML <= 0)) {
+            var score = document.getElementById("score");
+            score.innerHTML = ++score.innerHTML;
+        }
     };
 
     shark.setAttribute('draggable', false);
