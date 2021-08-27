@@ -24,7 +24,9 @@ function hearts_used() {
 
 function spawn_shark() {
     var sharks_list = ["big", "medium", "small"]
-    sharks_list[Math.floor(Math.random() * arr.length)];
+    shark_type = sharks_list[Math.floor(Math.random() * sharks_list.length)];
+
+    alert(shark_type);
 
     // make this 
     // <img src="static/images/morningshark.png" class="shark" onclick="shark_clicked()" draggable="false" unselectable="on"/>
