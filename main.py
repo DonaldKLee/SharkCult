@@ -25,6 +25,12 @@ def dated_url_for(endpoint, **values):
 def home():
 	return render_template("index.html")
 
+
+@app.route('/game')  # Game page
+def game():
+	return render_template("game.html")
+
+
 # For repl hosting
 if __name__ == "__main__":  # Makes sure this is the main process
 	app.run( # Starts the site
