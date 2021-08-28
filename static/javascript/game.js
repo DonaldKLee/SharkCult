@@ -1,13 +1,3 @@
-function shark_clicked() {
-    var hearts = document.getElementById("hearts");
-
-    // If user's hearts are not below or equal to 0
-    if (!(hearts.innerHTML <= 0)) {
-        var score = document.getElementById("score");
-        score.innerHTML = ++score.innerHTML;
-    }
-}
-
 function hearts_used() {
     var hearts = document.getElementById("hearts");
 
@@ -26,12 +16,13 @@ function spawn_shark() {
     //var sharks_list = ["baskingshark", "blueshark", "hammerhead1", "hammerhead2", "morningshark", "whaleshark"]
 
     var sharks_list = [
-        ["baskingshark", 1],
-        ["blueshark", 1],
-        ["hammerhead1", 1],
-        ["hammerhead2", 1],
-        ["morningshark", 1],
-        ["whaleshark", 1],
+        "blahaj",
+        "baskingshark",
+        "blueshark",
+        "hammerhead1",
+        "hammerhead2",
+        "morningshark",
+        "whaleshark",
     ]
 
 
@@ -43,28 +34,46 @@ function spawn_shark() {
     var game_container = document.getElementById("game_container")
 
     var shark = document.createElement("img");
-    shark.src = "static/images/" + shark_type[0] + ".png";  
+    shark.src = "static/images/" + shark_type + ".png";  
 
     shark.classList.add("shark");
 
-    shark_name = shark_type[0]
-    shark_rarity = shark_type[1]
+    shark_name = shark_type
+    //shark_points = shark_type[1]
 
-    shark.setAttribute('alt', shark_type[1]); // Shark rarity
+    shark_stats = Math.floor(Math.random() * (5)) + 1;
+    shark_speed = 4.5/shark_stats;
 
-    //shark.setAttribute("onclick","shark_clicked()");
+    shark.setAttribute("style", "animation-duration:" + shark_speed + "s;");
+
+    if (Math.random() < 0.3) {
+        shark.setAttribute("style", "animation-duration:" + shark_speed + "s; transform: scaleX(-0.5) scaleY(0.5);");
+    }
+
+    shark.setAttribute('alt', shark_stats); // Shark points
+
+    shark.addEventListener("animationend", function() {
+        if (!(this.alt === "captured_shark")) {
+            this.remove();
+        }
+    });
 
     shark.onclick = function() {
         var hearts = document.getElementById("hearts");
 
         // If user's hearts are not below or equal to 0
         if (!(hearts.innerHTML <= 0)) {
-            shark_rarity = this.alt;
+            shark_points = this.alt;
             var score = document.getElementById("score");
-            new_score = parseInt(score.innerHTML) + parseInt(shark_rarity);
+            new_score = parseInt(score.innerHTML) + parseInt(shark_stats);
             console.log(shark_type)
 
             score.innerHTML = new_score;
+            hearts.innerHTML = ++hearts.innerHTML; // Doesn't lose heart if also clicks
+            // Make it stay and move around
+            shark.setAttribute('alt', "captured_shark"); // Shark points
+
+            //this.remove();
         }
     };
 
@@ -77,3 +86,6 @@ function spawn_shark() {
 
 // Spawns a shark every X ms (X is between 1000 to 5000)
 setInterval(spawn_shark, Math.floor(Math.random() * (5000 - 1000 + 1000) ) + 1000);
+
+// Use JS to set animation duration
+

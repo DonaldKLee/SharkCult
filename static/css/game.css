@@ -4,6 +4,7 @@
     width: 100%;
     position: relative;
     overflow: hidden;
+    cursor: crosshair;
 }
 
 .shark {
@@ -19,31 +20,30 @@
     top: 300px;
     transform: scale(0.5);
 
-
-    animation: shark_animation 2s linear; 
+    animation-name: shark_animation;
+    animation-timing-function: linear;
+    /* Uses JS to set animation duration */
 }
 
-
-
 @keyframes shark_animation {
-    0% { top:300px; left: 0px; display: block;}
-    10% {top:  220px;left: 100px; display: block;}
-    20% {top: 140px;left: 200px; display: block;}
-    30% {top: 100px;left: 300px; display: block;}
-    40% {top: 75px;left: 400px; display: block;}
-    50% {top: 50px;left: 500px; display: block;}
-    60% {top: 75px;left: 600px; display: block;} 
-    70% {top: 100px;left: 700px; display: block;}
-    80% {top: 140px;left: 800px; display: block;} 
-    90% {top: 220px;left: 900px; display: block;}
-    100% {top: 300px;left: 1000px; display: block;}
+    0% { top:300px; left: 0px;}
+    10% {top:  220px;left: 100px;}
+    20% {top: 140px;left: 200px;}
+    30% {top: 100px;left: 300px;}
+    40% {top: 75px;left: 400px;}
+    50% {top: 50px;left: 500px;}
+    60% {top: 75px;left: 600px;} 
+    70% {top: 100px;left: 700px;}
+    80% {top: 140px;left: 800px;} 
+    90% {top: 220px;left: 900px;}
+    100% {top: 300px;left: 1000px;}
 }
 
 
 .waterback {
     position: absolute;
     display: block;
-    top: 20%;
+    top: 11em;
 
     -webkit-user-select: none;
     -khtml-user-select: none;
@@ -54,7 +54,7 @@
     animation: wave 30s linear infinite;
     width: 300%;
     background: url("../images/waterback.png") repeat-x; 
-    height: 1000px;
+    height: 100%;
     left: 120%;
 
 }
@@ -73,8 +73,10 @@
     width: 300%;
     margin-top: -350px;
     background: url("../images/waterfront.png") repeat-x; 
-    height: 300px;
+    height: 30%;
     left: 120%;
+
+    z-index: 2;
 }
 
 
