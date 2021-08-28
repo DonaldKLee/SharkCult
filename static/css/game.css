@@ -1,3 +1,20 @@
+body {
+    margin: 0;
+}
+
+.title{
+    position: relative;
+    height: 10vh;
+    font-family: Sniglet;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 48px;
+    text-align: center;
+    color: #758F93;
+    width: 100%;
+    line-height: 10vh;
+}
+
 .game_container {
     background: #95ECFF;
     height: 90vh;
@@ -43,7 +60,7 @@
 .waterback {
     position: absolute;
     display: block;
-    top: 11em;
+    top: 14em;
 
     -webkit-user-select: none;
     -khtml-user-select: none;
@@ -71,11 +88,10 @@
     position: relative;
     top: 100%;
     width: 300%;
-    margin-top: -350px;
+    margin-top: -300px;
     background: url("../images/waterfront.png") repeat-x; 
     height: 30%;
     left: 120%;
-
     z-index: 2;
 }
 
@@ -100,25 +116,6 @@
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .game_stats_container {
     padding-left: 20px;
 }
@@ -134,5 +131,48 @@
     color: #000000;
 }
 
+.gameover {
+    display: none;
+}
 
+.show_gameover {
+    animation: gameover 0.4s linear;
+    top: 200px;
+    position: absolute;
+    text-align:center;
+    margin: 0 auto;
+    display: block;
+    width: 100%;
+    z-index: 5;
+}
 
+@keyframes gameover {
+  from {opacity: 0%; top:0px;}
+  to {opacity: 100%; top:200px;}
+}
+
+.gameover_text {
+    font-family: Sniglet;
+    font-style: normal;
+    font-weight: normal;
+    padding: 0;
+    font-size:6em;
+}
+
+.start_button {
+    position: relative;
+    font-family: Sniglet;
+    font-style: normal;
+    font-weight: normal;
+
+    padding: 0px 20px;
+    text-decoration: none;
+    font-size: 2em;
+
+    color: #758F93;
+    border: 3px solid #FFFFFF;
+
+    background: #FFD232;
+    box-shadow: 0px 0px 24px -3px rgba(0, 0, 0, 0.25);
+    border-radius: 40px;
+}

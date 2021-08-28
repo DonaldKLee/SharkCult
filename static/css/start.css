@@ -1,97 +1,132 @@
+body {
+    margin: 0;
+}
+.menu_container{
+    background: #6DA8FF;
 
-
-
-
-
-
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
 .start_button {
+    position: relative;
+    font-family: Sniglet;
+    font-style: normal;
+    font-weight: normal;
 
-  position: relative;
-  width: 191px;
-  height: 75px;
-  text-decoration: none;
-  font-family: Sniglet;
-  font-style: normal;
-  font-weight: normal;
- 
-  font-size: 48px;
-  line-height: 60px;
-  display: flex;
-  align-items: 50%;
-  text-align: 50%;
+    display: block; /* Makes the button in the middle of the container */
+    margin: 0 auto; /* Makes the button in the middle of the container */
+    text-align: center;
+    
+    top: 30%;
 
-  color: #758F93;
+    width: 200px;
+    text-decoration: none;
+    font-size: 3em;
 
-  border: 3px solid #FFFFFF;
+    color: #758F93;
+    border: 3px solid #FFFFFF;
 
-  background: #FFD232;
-  box-shadow: 0px 0px 24px -3px rgba(0, 0, 0, 0.25);
-  border-radius: 41px;
-
-
- 
-
+    background: #FFD232;
+    box-shadow: 0px 0px 24px -3px rgba(0, 0, 0, 0.25);
+    border-radius: 40px;
 }
 
 
-
 .instruction {
-  background: #FFFFFF;
-  box-shadow: 0px 0px 24px -3px rgba(0, 0, 0, 0.25);
-  border-radius: 13px;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 24px -3px rgba(0, 0, 0, 0.25);
+    border-radius: 13px;
 
-  font-family: Sniglet;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 18px;
-  line-height: 22px;
-  text-align: center;
-
-  color: #000000;
-  position: relative;
-  width: 400px;
-  height: 110px;
-
+    font-family: Sniglet;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 35px;
+    text-align: center;
+    
+    margin: 0 auto;
+    color: #000000;
+    position: relative;
+    width: 400px;
+    height: 110px;
+    top: 35%;
 }
 
 
 .shark_fact {
-  background: #FFFFFF;
-  box-shadow: 0px 0px 24px -3px rgba(0, 0, 0, 0.25);
-  border-radius: 13px;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 24px -3px rgba(0, 0, 0, 0.25);
+    border-radius: 13px;
+    
+    position: relative;
+    width: 490px;
+    height: 50px;
+    margin: 0 auto;
+    font-family: Sniglet;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 22px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding-left: 50px;
+    color: #000000;
+    top: 350px;
 
-  position: relative;
-  width: 670px;
-  height: 22px;
-  padding-left: 20px;
+}
 
-  font-family: Sniglet;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 18px;
-  line-height: 22px;
-  display: flex;
-  align-items: center;
-  text-align: center;
 
-  color: #000000;
+.title{
+    position: relative;
+    width: 271px;
+    height: 66px;
+    margin: 0 auto;
+    top: 60%;
 
- 
+    font-family: Sniglet;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 48px;
+    line-height: 60px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #758F93;
+
+    border: 3px solid #FFFFFF;
+}
+
+
+
+.waterbackindex{
+    position: absolute;
+    display: block;
+    top: 38%;
+
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    
     
 }
 
-
-.menu_container{
-background: #6DA8FF;
-
-position: relative;
-width: 10000px;
-height: 10000px;
-
-
-
-
+.shark_image{
+    position: relative;
+    display: block;
+    top: 40%;
+    left: 42% ;
+    transform: scale(0.5)
 }
+
+
+
+
+
 
 
 
