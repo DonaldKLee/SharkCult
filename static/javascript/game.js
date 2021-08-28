@@ -29,9 +29,9 @@ function spawn_shark() {
         ["baskingshark", 1],
         ["blueshark", 1],
         ["hammerhead1", 1],
-        ["hammerhead2", 2],
-        ["morningshark", 3],
-        ["whaleshark", 2],
+        ["hammerhead2", 1],
+        ["morningshark", 1],
+        ["whaleshark", 1],
     ]
 
 

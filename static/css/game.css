@@ -19,7 +19,6 @@
     top: 300px;
     transform: scale(0.5);
 
-    display: none;
 
     animation: shark_animation 2s linear; 
 }
@@ -79,16 +78,41 @@
 }
 
 
-
+/*
 
 @keyframes wave {
   0% {
     transform: translate3d(-100%, 0, 0);
   }
   100% {
-    transform: translate3d(0, 0, 0); /* The image width */
+    transform: translate3d(0, 0, 0); /* The image width 
   }
 }
+
+*/
+
+
+@keyframes wave {
+  0% { left: 0; }
+  100% { left: -100%; }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
