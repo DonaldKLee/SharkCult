@@ -50,6 +50,8 @@ function spawn_shark() {
     shark_name = shark_type[0]
     shark_rarity = shark_type[1]
 
+    shark.setAttribute('alt', shark_type[1]); // Shark rarity
+
     //shark.setAttribute("onclick","shark_clicked()");
 
     shark.onclick = function() {
@@ -57,6 +59,7 @@ function spawn_shark() {
 
         // If user's hearts are not below or equal to 0
         if (!(hearts.innerHTML <= 0)) {
+            shark_rarity = this.alt;
             var score = document.getElementById("score");
             new_score = parseInt(score.innerHTML) + parseInt(shark_rarity);
             console.log(shark_type)
@@ -72,4 +75,5 @@ function spawn_shark() {
 
 }
 
-setInterval(spawn_shark, 1000)
+// Spawns a shark every X ms (X is between 1000 to 5000)
+setInterval(spawn_shark, Math.floor(Math.random() * (5000 - 1000 + 1000) ) + 1000);

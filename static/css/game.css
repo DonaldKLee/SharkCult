@@ -1,8 +1,9 @@
 .game_container {
-    background: lightblue;
+    background: #95ECFF;
     height: 90vh;
     width: 100%;
     position: relative;
+    overflow: hidden;
 }
 
 .shark {
@@ -14,79 +15,98 @@
     user-select: none;
     /* Makes the image not selectable ^^^ */
 
-    position: relative;
+    position: absolute;
+    top: 300px;
+    transform: scale(0.5);
 
+    display: none;
 
-    animation: henry 2s linear infinite; /* Temporarily stopped it so I can test out the scores - Donald */
-
-    top: 500px;
-
-    /*Transform scale*/
-     transform: scale(0.5);
-
-    background: red; /*To see how big the shark is - Donald*/
+    animation: shark_animation 2s linear; 
 }
 
 
-@keyframes henry {
-    0% {
-        top:500px;
-        left: 0px;
-    }
 
-    10% {
-        top:  420px;
-        left: 100px;
-    }
+@keyframes shark_animation {
+    0% { top:300px; left: 0px; display: block;}
+    10% {top:  220px;left: 100px; display: block;}
+    20% {top: 140px;left: 200px; display: block;}
+    30% {top: 100px;left: 300px; display: block;}
+    40% {top: 75px;left: 400px; display: block;}
+    50% {top: 50px;left: 500px; display: block;}
+    60% {top: 75px;left: 600px; display: block;} 
+    70% {top: 100px;left: 700px; display: block;}
+    80% {top: 140px;left: 800px; display: block;} 
+    90% {top: 220px;left: 900px; display: block;}
+    100% {top: 300px;left: 1000px; display: block;}
+}
 
-    20% {
-        top: 340px;
-        left: 200px;
-    }
 
-    30% {
-        top: 300px;
-        left: 300px;
-    }
+.waterback {
+    position: absolute;
+    display: block;
+    top: 20%;
 
-    40% {
-        top: 275px;
-        left: 400px;
-    }
-
-    50% {
-        top: 250px;
-        left: 500px;
-    }
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
     
-    60% {
-        top: 275px;
-        left: 600px;
-    }
+    animation: wave 30s linear infinite;
+    width: 300%;
+    background: url("../images/waterback.png") repeat-x; 
+    height: 1000px;
+    left: 120%;
 
-    70% {
-        top: 300px;
-        left: 700px;
-    }
-
-
-    80% {
-        top: 340px;
-        left: 800px;
-    }
-
-
-    90% {
-        top: 420px;
-        left: 900px;
-    }
-
-    100% {
-        top: 500px;
-        left: 1000px;
-    }
 }
 
+
+.waterfront{
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    
+    animation: wave 60s linear infinite;
+    position: relative;
+    top: 100%;
+    width: 300%;
+    margin-top: -350px;
+    background: url("../images/waterfront.png") repeat-x; 
+    height: 300px;
+    left: 120%;
+}
+
+
+
+
+@keyframes wave {
+  0% {
+    transform: translate3d(-100%, 0, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0); /* The image width */
+  }
+}
+
+
+
+
+.game_stats_container {
+    padding-left: 20px;
+}
+
+.stat {
+    font-family: Sniglet;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 30px;
+    line-height: 22px;
+    display: flex;
+    align-items: center;
+    color: #000000;
+}
 
 
 
