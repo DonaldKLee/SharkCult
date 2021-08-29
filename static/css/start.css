@@ -15,25 +15,21 @@ body {
     font-family: Sniglet;
     font-style: normal;
     font-weight: normal;
-
     display: block; /* Makes the button in the middle of the container */
     margin: 0 auto; /* Makes the button in the middle of the container */
     text-align: center;
-    
-    top: 19%;
-
     width: 200px;
     text-decoration: none;
     font-size: 3em;
-
     color: #FFFFFF;
     border: 3px solid #FFFFFF;
-
     background: #FFD232;
     box-shadow: 0px 0px 24px -3px rgba(0, 0, 0, 0.25);
     border-radius: 40px;
-
     transition: 0.3s;
+    margin-top: 200px;
+    
+    z-index: 6;
 }
 
 .start_button:hover {
@@ -42,35 +38,45 @@ body {
     cursor: pointer;
 }
 
+.info_container {
+    width: 800px;
+    height: 40%;
+    margin: 0 auto;
+    display: block;
+    margin-top: 20px;
+    z-index: 6;
+}
+
 .leaderboard {
-    position: absolute;
-    height: 400px;
+    position: relative;
+    height: 250px;
     width: 330px;
     overflow-y: auto;
-    margin-left: 130px;
     background: #FFFFFF;
     box-shadow: 0px 0px 24px -3px rgba(0, 0, 0, 0.25);
     border-radius: 13px;
-    top: 20%;
+
+    float: left;
+    z-index: 6;
 }
 
 .instruction {
     background: #FFFFFF;
     box-shadow: 0px 0px 24px -3px rgba(0, 0, 0, 0.25);
     border-radius: 13px;
-
     font-family: Sniglet;
     font-style: normal;
     font-weight: normal;
     font-size: 18px;
     line-height: 35px;
     text-align: center;
-    margin: 0 auto;
     color: #000000;
     position: relative;
     width: 400px;
-    height: 110px;
-    top: 25%;
+    height: 250px;
+
+    float: right;
+    z-index: 6;
 }
 
 .shark_fact {
@@ -91,11 +97,13 @@ body {
     text-align: center;
     padding-left: 50px;
     color: #000000;
-    top: 230px;
+    top: 20px;
+    z-index: 6;
 }
 
 .title {
     position: relative;
+    z-index: 6;
     margin: 0 auto;
     top: 16%;
     font-family: Sniglet;
@@ -111,7 +119,7 @@ body {
 .waterback {
     position: absolute;
     display: block;
-    top: 15em;
+    top: 50vh;
     -webkit-user-select: none;
     -khtml-user-select: none;
     -moz-user-select: none;
@@ -131,56 +139,123 @@ body {
   100% { left: -100%; }
 }
 
-.shark_image{
+.shark_image_container {
     position: relative;
     display: block;
-    top: 25%;
-    left: 42% ;
-    transform: scale(0.5)
+    float: right;
+    transform: scale(0.5);
+    margin-top: -150px;
+    animation-name: rotated;
+    animation: rotated 3.5s linear infinite;
 }
 
+@keyframes rotated {
+    0% { top:400px; right: 0px;}
+    10% {top:  220px;right: 100px;}
+    20% {top: 140px;right: 200px;}
+    30% {top: 100px;right: 300px;}
+    40% {top: 75px;right: 400px;}
+    50% {top: 50px;right: 500px;}
+    60% {top: 75px;right: 600px;} 
+    70% {top: 100px;right: 700px;}
+    80% {top: 140px;right: 800px;} 
+    90% {top: 220px;right: 900px;}
+    100% {top: 375px;right: 1000px;}
+    }
+}
 
 
 .leaderboard_txt{
-  position: relative;
-  width: 234px;
-  height: 23px;
-  padding-left: 25%;
-  
-  font-family: Sniglet;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 25px;
-  line-height: 50px;
-  text-align: center;
+    position: relative;
+    width: 234px;
+    height: 23px;
+    padding-left: 25%;
 
-  color: #000000;
-
-
-
+    font-family: Sniglet;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 25px;
+    line-height: 50px;
+    text-align: center;
+    color: #000000;
 }
 
 .leaderboard_info {
-position: relative;
-width: 234px;
-height: 30px;
-padding-left: 10%;
-color: #000000;
-font-family: Sniglet;
-font-style: normal;
-font-weight: normal;
-font-size: 20px;
-line-height: 17px;
-
-
+    position: relative;
+    width: 234px;
+    height: 30px;
+    padding-left: 10%;
+    color: #000000;
+    font-family: Sniglet;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 17px;
 }
 
 .placeholder {
-  background: #FFFFFF;
-  border: 1px solid #C7C7C7;
-  box-sizing: border-box;
-  border-radius: 16px;
-
-
-
+    background: #FFFFFF;
+    border: 1px solid #C7C7C7;
+    box-sizing: border-box;
+    border-radius: 16px;
+    
 }
+
+/* --------- For the random spawning sharks --------- */
+.shark {
+    /* Makes the image not selectable */
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    /* Makes the image not selectable ^^^ */
+
+    position: absolute;
+    top: 480px;
+    transform: scale(0.5);
+
+    animation-name: shark_animation;
+    animation-timing-function: linear;
+    /* Uses JS to set animation duration */
+    z-index: 0;
+}
+
+.left_shark {
+    animation-name: left_shark_animation;
+}
+
+@keyframes left_shark_animation {
+    0% { top:300px; left: 0px;}
+    10% {top:  220px;left: 100px;}
+    20% {top: 140px;left: 200px;}
+    30% {top: 100px;left: 300px;}
+    40% {top: 75px;left: 400px;}
+    50% {top: 50px;left: 500px;}
+    60% {top: 75px;left: 600px;} 
+    70% {top: 100px;left: 700px;}
+    80% {top: 140px;left: 800px;} 
+    90% {top: 220px;left: 900px;}
+    100% {top: 375px;left: 1000px;}
+}
+
+.right_shark {
+    animation-name: right_shark_animation;
+}
+
+@keyframes right_shark_animation {
+    0% { top:400px; right: 0px;}
+    10% {top:  220px;right: 100px;}
+    20% {top: 140px;right: 200px;}
+    30% {top: 100px;right: 300px;}
+    40% {top: 75px;right: 400px;}
+    50% {top: 50px;right: 500px;}
+    60% {top: 75px;right: 600px;} 
+    70% {top: 100px;right: 700px;}
+    80% {top: 140px;right: 800px;} 
+    90% {top: 220px;right: 900px;}
+    100% {top: 475px;right: 1000px;}
+}   90% {top: 220px;right: 900px;}
+    100% {top: 375px;right: 1000px;}
+}
+/* --------- For the random spawning sharks ^^^ --------- */

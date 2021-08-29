@@ -21,29 +21,32 @@
         
         
         <!--<div class = "text_triangle"><img src = static/images/></div> -->
-        <div class="menu_container">
+        <div id="menu_container" class="menu_container">
 
             <h1 class="title">Shark Cult</h1> 
 
             <a href="/game" class="start_button">Start</a>
            
-            <div class="leaderboard">
-                <h class = "leaderboard_txt">Leaderboard:</h>
-                </br>
-                <ol>
-                {% for player in leaderboard_data %}
-                    <li class = leaderboard_info>{{ player.nickname }}: {{ player.score }}</li>
-                {% endfor %}
-                </ol>
+
+            <div class="info_container">
+
+                <div class="leaderboard">
+                    <h class = "leaderboard_txt">Leaderboard:</h>
+                    </br>
+                    <ol>
+                    {% for player in leaderboard_data %}
+                        <li class = leaderboard_info>{{ player.nickname }}: {{ player.score }}</li>
+                    {% endfor %}
+                    </ol>
+                </div>
+
+                <div class="instruction">Instuctions: Click on Sharks that jump out of the water to tame them and join a cult together!</div>
+                <div class="shark_fact" id="fact"></div>
             </div>
 
-            <div class="instruction">Instuctions: Click on Sharks that jump out of the water to tame them and join a cult together!</div>
-            <div class="shark_fact" id="fact"></div>
-
+            <div class="shark_image_container"><img class="shark_image" src="static/images/blahaj.png"></div>     
             
             <div class="waterback"></div>
-
-            <div class="shark_image"><img src="static/images/blahaj.png"></div>     
         </div>
     </body>
 
