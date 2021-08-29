@@ -57,7 +57,7 @@ body {
     70% {top: 100px;left: 700px;}
     80% {top: 140px;left: 800px;} 
     90% {top: 220px;left: 900px;}
-    100% {top: 300px;left: 1000px;}
+    100% {top: 375px;left: 1000px;}
 }
 
 .right_shark {
@@ -65,7 +65,7 @@ body {
 }
 
 @keyframes right_shark_animation {
-    0% { top:300px; right: 0px;}
+    0% { top:400px; right: 0px;}
     10% {top:  220px;right: 100px;}
     20% {top: 140px;right: 200px;}
     30% {top: 100px;right: 300px;}
@@ -75,7 +75,7 @@ body {
     70% {top: 100px;right: 700px;}
     80% {top: 140px;right: 800px;} 
     90% {top: 220px;right: 900px;}
-    100% {top: 300px;right: 1000px;}
+    100% {top: 375px;right: 1000px;}
 }
 
 .waterback {
@@ -195,7 +195,7 @@ body {
     text-decoration: none;
     font-size: 2em;
 
-    color: #758F93;
+    color: #FFFFFF;
     border: 3px solid #FFFFFF;
 
     background: #FFD232;
@@ -209,4 +209,21 @@ body {
     padding: 0px 25px;
     font-size: 2.2em;
     cursor: pointer;
+}
+
+
+.nickname {
+  font-family: Sniglet;
+  font-size: 32px;
+
+}
+
+
+.place_holder {
+background: #FFFFFF;
+border: 1px solid #C7C7C7;
+box-sizing: border-box;
+border-radius: 16px;
+padding: 30%;
+
 }

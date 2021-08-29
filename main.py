@@ -52,7 +52,7 @@ def handle_data():
     nickname = request.form['nickname']
 
     player = {
-        "score": score,
+        "score": int(score),
         "nickname": nickname,
     }
 
