@@ -8,6 +8,7 @@ body {
     width: 100%;
     height: 100vh;
 }
+
 .start_button {
     position: relative;
     font-family: Sniglet;
@@ -24,12 +25,34 @@ body {
     text-decoration: none;
     font-size: 3em;
 
-    color: #758F93;
+    color: #FFFFFF;
     border: 3px solid #FFFFFF;
 
     background: #FFD232;
     box-shadow: 0px 0px 24px -3px rgba(0, 0, 0, 0.25);
     border-radius: 40px;
+
+    transition: 0.3s;
+}
+
+.start_button:hover {
+    background: #FFB72C;
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+
+
+.leaderboard {
+    position: absolute;
+    height: 400px;
+    width: 330px;
+    overflow-y: auto;
+    margin-left: 150px;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 24px -3px rgba(0, 0, 0, 0.25);
+    border-radius: 13px;
+    top: 20%;
 }
 
 
@@ -80,40 +103,58 @@ body {
 
 .title{
     position: relative;
-    width: 271px;
-    height: 66px;
+    width: 500px;
+    height: 48px;
     margin: 0 auto;
-    top: 60%;
-
+    top: 15%;
+  
     font-family: Sniglet;
     font-style: normal;
     font-weight: normal;
-    font-size: 48px;
-    line-height: 60px;
-    display: flex;
+    font-size: 100px;
+    line-height: 100px;
+    display: block;
     align-items: center;
     text-align: center;
 
-    color: #758F93;
+    color: rgb(0, 0, 0);
 
-    border: 3px solid #FFFFFF;
+    
 }
 
 
 
+
+
+
+
+
+
 .waterbackindex{
+    
     position: absolute;
     display: block;
     top: 38%;
-
     -webkit-user-select: none;
     -khtml-user-select: none;
     -moz-user-select: none;
     -o-user-select: none;
     user-select: none;
+    animation-name: waveindex;
+    animation: waveindex 1s linear infinite;
     
     
 }
+
+
+@keyframes waveindex{
+0% { left: 0%; }
+  100% { left:-14%; }
+}
+
+
+
+
 
 .shark_image{
     position: relative;
@@ -121,12 +162,43 @@ body {
     top: 40%;
     left: 42% ;
     transform: scale(0.5)
+
+
 }
 
 
 
+.leaderboard_txt{
+  position: relative;
+  width: 234px;
+  height: 23px;
+  padding-left: 25%;
+  
+  font-family: Sniglet;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 25px;
+  line-height: 50px;
+  text-align: center;
+
+  color: #000000;
 
 
 
+}
 
+.leaderboard_info {
+position: relative;
+width: 234px;
+height: 30px;
+padding-left: 10%;
+color: #000000;
+font-family: Sniglet;
+font-style: normal;
+font-weight: normal;
+font-size: 20px;
+line-height: 17px;
+
+
+}
 

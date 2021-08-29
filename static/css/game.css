@@ -34,7 +34,7 @@ body {
     /* Makes the image not selectable ^^^ */
 
     position: absolute;
-    top: 300px;
+    top: 480px;
     transform: scale(0.5);
 
     animation-name: shark_animation;
@@ -42,7 +42,11 @@ body {
     /* Uses JS to set animation duration */
 }
 
-@keyframes shark_animation {
+.left_shark {
+    animation-name: left_shark_animation;
+}
+
+@keyframes left_shark_animation {
     0% { top:300px; left: 0px;}
     10% {top:  220px;left: 100px;}
     20% {top: 140px;left: 200px;}
@@ -56,11 +60,28 @@ body {
     100% {top: 300px;left: 1000px;}
 }
 
+.right_shark {
+    animation-name: right_shark_animation;
+}
+
+@keyframes right_shark_animation {
+    0% { top:300px; right: 0px;}
+    10% {top:  220px;right: 100px;}
+    20% {top: 140px;right: 200px;}
+    30% {top: 100px;right: 300px;}
+    40% {top: 75px;right: 400px;}
+    50% {top: 50px;right: 500px;}
+    60% {top: 75px;right: 600px;} 
+    70% {top: 100px;right: 700px;}
+    80% {top: 140px;right: 800px;} 
+    90% {top: 220px;right: 900px;}
+    100% {top: 300px;right: 1000px;}
+}
 
 .waterback {
     position: absolute;
     display: block;
-    top: 14em;
+    top: 15em;
 
     -webkit-user-select: none;
     -khtml-user-select: none;
@@ -71,7 +92,7 @@ body {
     animation: wave 30s linear infinite;
     width: 300%;
     background: url("../images/waterback.png") repeat-x; 
-    height: 100%;
+    height: 1000px;
     left: 120%;
 
 }
@@ -88,26 +109,14 @@ body {
     position: relative;
     top: 100%;
     width: 300%;
-    margin-top: -300px;
+    margin-top: -350px;
     background: url("../images/waterfront.png") repeat-x; 
-    height: 30%;
+    height: 300px;
     left: 120%;
     z-index: 2;
 }
 
 
-/*
-
-@keyframes wave {
-  0% {
-    transform: translate3d(-100%, 0, 0);
-  }
-  100% {
-    transform: translate3d(0, 0, 0); /* The image width 
-  }
-}
-
-*/
 
 
 @keyframes wave {
@@ -129,6 +138,12 @@ body {
     display: flex;
     align-items: center;
     color: #000000;
+}
+
+.highest_score {
+    float: right;
+    padding-right: 20px;
+    margin-top: 0px;
 }
 
 .gameover {
@@ -156,7 +171,18 @@ body {
     font-style: normal;
     font-weight: normal;
     padding: 0;
+    margin: 0;
     font-size:6em;
+}
+
+.gameover_score {
+    font-family: Sniglet;
+    font-style: normal;
+    font-weight: normal;
+    padding: 0;
+    margin: 0;
+    margin-top: -10px;
+    font-size:3em;
 }
 
 .start_button {
@@ -175,4 +201,12 @@ body {
     background: #FFD232;
     box-shadow: 0px 0px 24px -3px rgba(0, 0, 0, 0.25);
     border-radius: 40px;
+    transition: 0.3s;
+}
+
+.start_button:hover {
+    background: #FFB72C;
+    padding: 0px 25px;
+    font-size: 2.2em;
+    cursor: pointer;
 }

@@ -1,5 +1,16 @@
-from flask import Flask, render_template, url_for, redirect
-import random
+from flask import Flask, render_template, url_for, redirect, request
+import random, os
+
+
+# MongoDB
+import dns # For mongodb to work, this installs an older version of bson, if version error, uninstall bson/pymongo to get it working again
+import pymongo # If dnspython module error, do 'pip install pymongo[srv]'
+MongoDBUsername = os.environ['MongoDBUsername']
+MongoDBPassword = os.environ['MongoDBPassword']
+client = pymongo.MongoClient("mongodb+srv://"+ MongoDBUsername +":"+ MongoDBPassword +"@cluster0.qrjjj.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
+db = client.database
+# ^^^
+
 
 app = Flask(  # Create a flask app
 	__name__,
@@ -23,12 +34,31 @@ def dated_url_for(endpoint, **values):
 
 @app.route('/')  # Home page
 def home():
-	return render_template("index.html")
+    leaderboard_data = db.leaderboard.find() # Gets all the objects in the leaderboard database
+
+    sorted_leaderboard = db.leaderboard.find().sort("score", -1)
+   
+
+    return render_template("index.html", leaderboard_data=sorted_leaderboard)
 
 
 @app.route('/game')  # Game page
 def game():
 	return render_template("game.html")
+
+@app.route('/submit_score', methods=["GET", "POST"])
+def handle_data():
+    score = request.form['user_score']
+    nickname = request.form['nickname']
+
+    player = {
+        "score": score,
+        "nickname": nickname,
+    }
+
+    db.leaderboard.insert_one(player)
+
+    return redirect("/")
 
 
 # For repl hosting

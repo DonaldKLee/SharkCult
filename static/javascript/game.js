@@ -1,19 +1,45 @@
+const highest_score = localStorage.getItem('highest_score');
+if (highest_score) {
+    document.getElementById("highest_score").innerHTML = highest_score;
+}
+
+function game_over() {
+    console.log("Game over!")
+    var game_over_sign = document.getElementById("gameover");
+    game_over_sign.style.display = "block";
+    game_over_sign.classList.add("show_gameover");
+
+    var score = document.getElementById("score").innerHTML;
+    var score_form = document.getElementById("submit_score");
+    submit_score.value = score;
+
+    document.getElementById("gameover_score").innerHTML = score;
+    
+    // If new high score
+    if (parseInt(score) > parseInt(document.getElementById("highest_score").innerHTML)) {
+        localStorage.setItem('highest_score', score);
+        document.getElementById("highest_score").innerHTML = score;
+        document.getElementById("score_text").innerHTML = "New Record: ";
+    }
+
+    document.getElementById("gameover_score").innerHTML = score;
+}
+
 function hearts_used() {
     var hearts = document.getElementById("hearts");
 
-    // If user's hearts are not below or equal to 0
+    // If user missed 10 or more times
 
-    if (!(hearts.innerHTML <= 0)) {
-        hearts.innerHTML = --hearts.innerHTML;
+    if (!(hearts.innerHTML >= 10)) {
+        hearts.innerHTML = ++hearts.innerHTML;
+
+        if (hearts.innerHTML >= 10) {
+            game_over()
+        }
     }
 
    else {
-       console.log("Game over!")
-
-       var game_over_sign = document.getElementById("gameover");
-       game_over_sign.style.display = "block";
-       game_over_sign.classList.add("show_gameover");
-
+       game_over()
    }
 }
 
@@ -43,11 +69,18 @@ function spawn_shark() {
 
     shark.classList.add("shark");
 
+    if (Math.random() < 0.5) { // 50% chance of the shark moving from right to left
+        shark.classList.add("right_shark");
+    }
+    else {
+        shark.classList.add("left_shark");
+    }
+
     shark_name = shark_type
 
     shark_points = Math.floor(Math.random() * (5)) + 1;
     if (shark_points === 5) {
-        shark_speed = 0.1;
+        shark_speed = 0.2;
     }
 
     if (shark_points === 4) {
@@ -80,8 +113,6 @@ function spawn_shark() {
     // Maybe have one have a right keyframes (Make another keyframes)
 
 
-
-
     shark.setAttribute('alt', shark_points); // Shark points
 
     // If the shark isn't captured
@@ -102,7 +133,7 @@ function spawn_shark() {
             console.log(shark_type)
 
             score.innerHTML = new_score;
-            hearts.innerHTML = ++hearts.innerHTML; // Doesn't lose heart if also clicks
+            hearts.innerHTML = --hearts.innerHTML; // Doesn't lose heart if also clicks
             
             // Make it stay and move around
             shark.setAttribute('alt', "captured_shark"); // Shark points
@@ -110,14 +141,17 @@ function spawn_shark() {
 
             shark.animate([
                 // keyframes
-                { transform: 'scale(0.25)', left: '' + (Math.floor(Math.random() * (10) ) + 0) + '%' },
-                { transform: 'scale(0.25)', left: '' + (Math.floor(Math.random() * (70) ) + 60) + '%' }
+                { transform: 'scale(0.25) translateY(-100px) rotate(0deg)', left: '' + (Math.floor(Math.random() * (10) ) + 0) + '%'},
+                { transform: 'scale(0.25) translateY(40px) rotate(30deg)', left: '' + (Math.floor(Math.random() * (65) ) + 60) + '%'}
             ], {
                 // timing options
                 duration: Math.floor(Math.random() * (6000) ) + 5000,
                 iterations: Infinity,
                 direction: "alternate"
             });
+
+            var tamed = document.getElementById("tamed");
+            tamed.innerHTML = ++tamed.innerHTML;
         }
     };
 
@@ -131,4 +165,4 @@ function spawn_shark() {
 // Spawns a shark every X ms (X is between 1000 to 5000)
 setInterval(spawn_shark, Math.floor(Math.random() * (5000) ) + 1000);
 
-
+setInterval(spawn_shark, Math.floor(Math.random() * (5000) ) + 1000);
