@@ -22,16 +22,16 @@ Additionally, since we weren’t familiar with JavaScript and don’t use it a l
 We also had a significant problem with developing the leaderboard because it was not displaying the data in the correct order. After hours of googling, we decided to reach out to a MLH mentor for help, who then guided us to solve this issue within minutes!
 
 ## Accomplishments that we’re proud of
-We created our first web-based game
-Hand drawing the sharks instead of taking them from the internet, as it was more fun to draw
-Our graphic designer’s first time adding his own drawings to a game, and also using CSS for the first time
-We used JavaScript extensively, a language we do not often use.
-Although we had our challenges, we were able to pull through before the deadline with a fun project that we are proud of
+ 1. We created our first web-based game
+ 2. Hand drawing the sharks instead of taking them from the internet, as it was more fun to draw
+ 3. Our graphic designer’s first time adding his own drawings to a game, and also using CSS for the first time
+ 4. We used JavaScript extensively, a language we do not often use
+ 5. Although we had our challenges, we were able to pull through before the deadline with a fun project that we are proud of
 
 ## What we learned
-We learned group cooperation and time management
-We furthered our understanding of programming and web design.
-We learned how to dynamically create elements alongside animations using JavaScript.
+ 1. We learned group cooperation and time management
+ 2. We furthered our understanding of programming and web design
+ 3. We learned how to dynamically create elements alongside animations using JavaScript
 
 
 ## What’s next for Shark Cult
