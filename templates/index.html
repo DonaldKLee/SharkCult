@@ -15,7 +15,9 @@
 
             <link rel="stylesheet" href='/static/css/start.css' />
       </head>
-        <title>Shark Cult</title>
+          <title>Shark Cult</title>
+
+
     </head>
     <body>
         
@@ -23,15 +25,16 @@
         <!--<div class = "text_triangle"><img src = static/images/></div> -->
         <div id="menu_container" class="menu_container">
 
+
+          
             <h1 class="title">Shark Cult</h1> 
 
             <a href="/game" class="start_button">Start</a>
            
 
             <div class="info_container">
-
-                <div class="leaderboard">
-                    <h class = "leaderboard_txt">Leaderboard:</h>
+                <div class="leaderboard scroll">
+                    <h1 class="leaderboard_txt">Leaderboard</h1>
                     </br>
                     <ol>
                     {% for player in leaderboard_data %}
@@ -40,11 +43,19 @@
                     </ol>
                 </div>
 
-                <div class="instruction">Instuctions: Click on Sharks that jump out of the water to tame them and join a cult together!</div>
-                <div class="shark_fact" id="fact"></div>
+                <div class="instruction">
+                    <h1 class="leaderboard_txt">How to Play</h1>
+                    <p class="instruction_text">Tame wild sharks by clicking on them!</br>The faster the shark, the more points you will earn</br>You don’t need to tame every shark you see, but if you attempt to tame a shark and fail, you will lose a point</br>After 10 tries, the game will end!</p>
+                </div>
+
+                <p class="shark_fact" id="fact"></p>
             </div>
 
-            <div class="shark_image_container"><img class="shark_image" src="static/images/blahaj.png"></div>     
+            <div class="shark_image_container">
+                <img class="melon" src="static/images/watermelon.png"/>
+                <img class="shark_image" src="static/images/blahaj.png"/>
+                <img class="splash" src="static/images/splash.gif"/>
+            </div>     
             
             <div class="waterback"></div>
         </div>

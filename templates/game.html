@@ -15,14 +15,22 @@
     </head>
     <body>
 
-        <div class="title">Shark Cult</div> 
-
         <div class="game_container" id="game_container" onclick="hearts_used()">
+
+            <div class="cloud1"><img src="static/images/smallcloud1.png"></div>
+            <div class="cloud2"><img src="static/images/smallcloud2.png"></div>
+
+
+            <div class="bigcloudleft"><img src="static/images/cloud1.png"></div>
+            <div class="bigcloudright"><img src="static/images/cloud2.png"></div>
+
 
 
             <div class="game_stats_container">
-                <h1 class="stat highest_score">Highest score:&nbsp;<span id="highest_score">0</span></h1>
-
+                <div class="stat_right">
+                    <h1 class="stat title">Shark Cult</h1>
+                    <h1 class="stat highest_score">Highest score:&nbsp;<span id="highest_score">0</span></h1>
+                </div>
                 <h1 class="stat"> Score:&nbsp;<span id="score">0</span></h1>
                 <h1 class="stat"> Sharks tamed:&nbsp;<span id="tamed">0</span></h1>
                 <h1 class="stat"> Missed:&nbsp;<span id="hearts">0</span>/10</h1>
@@ -39,9 +47,9 @@
                     <input type="number" id="submit_score" style="display:none;" name="user_score" required>
                     </br>
 
-                    <label class = "nickname">Nickname: </label>
-                    <input class = " place_holder" type="name" id="nickname" name="nickname" >
-                    <input type="submit" class="start_button" value="Join leaderboard!">
+                    <label class="nickname">Nickname: </label>
+                    <input class="place_holder" type="name" id="nickname" name="nickname" >
+                    <input type="submit" class="leaderboard_button" value="Join leaderboard!">
                 </form>
 
             </div>
@@ -49,18 +57,12 @@
 
             <!--<img src="static/images/morningshark.png" class="shark" onclick="shark_clicked()" draggable="false" unselectable="on"/>-->
           
-         
+            
             <div class="waterback"></div>
             <div class="waterfront"></div>
         </div>
-
-
     </body>
 
+    <script src="static/javascript/game.js"></script>
 
-    
-      <script src="static/javascript/game.js"></script>
-
-
-    
 </html>

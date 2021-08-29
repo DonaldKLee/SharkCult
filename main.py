@@ -1,7 +1,6 @@
 from flask import Flask, render_template, url_for, redirect, request
 import random, os
 
-
 # MongoDB
 import dns # For mongodb to work, this installs an older version of bson, if version error, uninstall bson/pymongo to get it working again
 import pymongo # If dnspython module error, do 'pip install pymongo[srv]'
@@ -10,7 +9,6 @@ MongoDBPassword = os.environ['MongoDBPassword']
 client = pymongo.MongoClient("mongodb+srv://"+ MongoDBUsername +":"+ MongoDBPassword +"@cluster0.qrjjj.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
 db = client.database
 # ^^^
-
 
 app = Flask(  # Create a flask app
 	__name__,
@@ -35,12 +33,9 @@ def dated_url_for(endpoint, **values):
 @app.route('/')  # Home page
 def home():
     leaderboard_data = db.leaderboard.find() # Gets all the objects in the leaderboard database
-
     sorted_leaderboard = db.leaderboard.find().sort("score", -1)
    
-
     return render_template("index.html", leaderboard_data=sorted_leaderboard)
-
 
 @app.route('/game')  # Game page
 def game():

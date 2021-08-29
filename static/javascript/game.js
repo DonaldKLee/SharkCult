@@ -80,11 +80,11 @@ function spawn_shark() {
 
     shark_points = Math.floor(Math.random() * (5)) + 1;
     if (shark_points === 5) {
-        shark_speed = 0.2;
+        shark_speed = 0.3;
     }
 
     if (shark_points === 4) {
-        shark_speed = 0.3;
+        shark_speed = 0.4;
     }
 
     if (shark_points === 3) {
@@ -96,7 +96,7 @@ function spawn_shark() {
     }
 
     else {
-        shark_speed = 1;
+        shark_speed = 1.2;
     }
 
     shark.setAttribute("style", "animation-duration:" + shark_speed + "s;");
